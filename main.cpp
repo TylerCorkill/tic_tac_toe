@@ -140,36 +140,32 @@ int main()
 			{
 				eit = "O";
 			}
-			//else if ((fiv == two) && (eit == " "))	eit = "O";
 			else if ((six == " ") && (((fiv == fur) && (fiv != " "))
 								  ||  ((tri == nin) && (tri != " "))))
 			{
 				six = "O";
 			}
-			//else if ((fiv == fur) && (six == " "))	six = "O";
 			else if ((fur == " ") && (((fiv == six) && (fiv != " "))
 								  ||  ((one == sev) && (one != " "))))
 			{
 				fur = "O";
 			}
-			//else if ((fiv == six) && (fur == " "))	fur = "O";
 			else if ((two == " ") && (((fiv == eit) && (fiv != " "))
 								  ||  ((one == tri) && (one != " "))))
 			{
 				two = "O";
 			}
-			//else if ((fiv == eit) && (two == " "))	two = "O";
 			else
 			{
-				if (one == " ") 		one = "O";
-				else if (two == " ")	two = "O";
-				else if (tri == " ")	tri = "O";
-				else if (fur == " ")	fur = "O";
-				else if (fiv == " ")	fiv = "O";
-				else if (six == " ")	six = "O";
-				else if (sev == " ")	sev = "O";
-				else if (eit == " ")	eit = "O";
+				if (fiv == " ")			fiv = "O";
+				else if (one == " ") 	one = "O";
 				else if (nin == " ")	nin = "O";
+				else if (sev == " ")	sev = "O";
+				else if (tri == " ")	tri = "O";
+				else if (two == " ")	two = "O";
+				else if (fur == " ")	fur = "O";
+				else if (six == " ")	six = "O";
+				else if (eit == " ")	eit = "O";
 			}
 		}
 	}
