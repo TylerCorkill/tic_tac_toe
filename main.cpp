@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ int main()
 		   nin = " ";
 	for (int total = 0; total <= 9; total++)
 	{
-		cout << "\n _________________       __"<<"_"<<"_____"<<"_"<<"_____"<<"_"<<"__           "
+		cout << "\n _________________       __"<<"_"<<"_____"<<"_"<<"_____"<<"_"<<"__ "
 			 << "\n|     |     |     |     |  "<<" "<<"  |  "<<" "<<"  |  "<<" "<<"  |"
 			 << "\n|  1  |  2  |  3  | --> |  "<<one<<"  |  "<<two<<"  |  "<<tri<<"  |"
 			 << "\n|_____|_____|_____|     |__"<<"_"<<"__|__"<<"_"<<"__|__"<<"_"<<"__|"
@@ -111,65 +112,112 @@ int main()
 		}
 		else
 		{
-			if ((nin == " ") && (((fiv == one) && (fiv != " "))
-							 ||  ((six == tri) && (six != " "))
-							 ||  ((eit == sev) && (eit != " "))))
+			if ((nin == " ") && (((fiv == one) && (fiv == "O"))
+							 ||  ((six == tri) && (six == "O"))
+							 ||  ((eit == sev) && (eit == "O"))))
 			{
 				nin = "O";
 			}
-			else if ((sev == " ") && (((fiv == tri) && (fiv != " "))
-								  ||  ((fur == one) && (fur != " "))
-								  ||  ((eit == nin) && (eit != " "))))
+			else if ((sev == " ") && (((fiv == tri) && (fiv == "O"))
+								  ||  ((fur == one) && (fur == "O"))
+								  ||  ((eit == nin) && (eit == "O"))))
 			{
 				sev = "O";
 			}
-			else if ((tri == " ") && (((fiv == sev) && (fiv != " "))
-								  ||  ((two == one) && (two != " "))
-								  ||  ((six == nin) && (six != " "))))
+			else if ((tri == " ") && (((fiv == sev) && (fiv == "O"))
+								  ||  ((two == one) && (two == "O"))
+								  ||  ((six == nin) && (six == "O"))))
 			{
 				tri = "O";
 			}
-			else if ((one == " ") && (((fiv == nin) && (fiv != " "))
-								  ||  ((two == tri) && (two != " "))
-								  ||  ((fur == sev) && (fur != " "))))
+			else if ((one == " ") && (((fiv == nin) && (fiv == "O"))
+								  ||  ((two == tri) && (two == "O"))
+								  ||  ((fur == sev) && (fur == "O"))))
 			{
 				one = "O";
 			}
-			else if ((eit == " ") && (((fiv == two) && (fiv != " "))
-								  ||  ((sev == nin) && (sev != " "))))
+			else if ((eit == " ") && (((fiv == two) && (fiv == "O"))
+								  ||  ((sev == nin) && (sev == "O"))))
 			{
 				eit = "O";
 			}
-			else if ((six == " ") && (((fiv == fur) && (fiv != " "))
-								  ||  ((tri == nin) && (tri != " "))))
+			else if ((six == " ") && (((fiv == fur) && (fiv == "O"))
+								  ||  ((tri == nin) && (tri == "O"))))
 			{
 				six = "O";
 			}
-			else if ((fur == " ") && (((fiv == six) && (fiv != " "))
-								  ||  ((one == sev) && (one != " "))))
+			else if ((fur == " ") && (((fiv == six) && (fiv == "O"))
+								  ||  ((one == sev) && (one == "O"))))
 			{
 				fur = "O";
 			}
-			else if ((two == " ") && (((fiv == eit) && (fiv != " "))
-								  ||  ((one == tri) && (one != " "))))
+			else if ((two == " ") && (((fiv == eit) && (fiv == "O"))
+								  ||  ((one == tri) && (one == "O"))))
+			{
+				two = "O";
+			}
+			else if ((nin == " ") && (((fiv == one) && (fiv == "X"))
+								  ||  ((six == tri) && (six == "X"))
+								  ||  ((eit == sev) && (eit == "X"))))
+			{
+				nin = "O";
+			}
+			else if ((sev == " ") && (((fiv == tri) && (fiv == "X"))
+								  ||  ((fur == one) && (fur == "X"))
+								  ||  ((eit == nin) && (eit == "X"))))
+			{
+				sev = "O";
+			}
+			else if ((tri == " ") && (((fiv == sev) && (fiv == "X"))
+								  ||  ((two == one) && (two == "X"))
+								  ||  ((six == nin) && (six == "X"))))
+			{
+				tri = "O";
+			}
+			else if ((one == " ") && (((fiv == nin) && (fiv == "X"))
+								  ||  ((two == tri) && (two == "X"))
+								  ||  ((fur == sev) && (fur == "X"))))
+			{
+				one = "O";
+			}
+			else if ((eit == " ") && (((fiv == two) && (fiv == "X"))
+								  ||  ((sev == nin) && (sev == "X"))))
+			{
+				eit = "O";
+			}
+			else if ((six == " ") && (((fiv == fur) && (fiv == "X"))
+								  ||  ((tri == nin) && (tri == "X"))))
+			{
+				six = "O";
+			}
+			else if ((fur == " ") && (((fiv == six) && (fiv == "X"))
+								  ||  ((one == sev) && (one == "X"))))
+			{
+				fur = "O";
+			}
+			else if ((two == " ") && (((fiv == eit) && (fiv == "X"))
+								  ||  ((one == tri) && (one == "X"))))
 			{
 				two = "O";
 			}
 			else
 			{
-				if (fiv == " ")			fiv = "O";
+				if (fiv == " ")	fiv = "O";
 				else if (one == "X")
 				{
-					if (nin == "X")
+					if (nin == " ")
 					{
-						if ((two == " ") && (eit == " "))
-						{
-							two = "O";
-						}
-						else if ((fur == " ") && (six == " "))
-						{
-							fur = "O";
-						}
+						nin = "O";
+					}
+					else if (nin == "X")
+					{
+						if ((two == " ") && (eit == " ")) two = "O";
+						else if ((fur == " ") && (six == " ")) fur = "O";
+					}
+					else if (fiv == "X")
+					{
+						if ((six == " ") && (tri == " ")) tri = "O";
+						else if ((eit == " ") && (sev == " ")) sev = "O";
 					}
 					else if ((six == "X") && (tri == " "))
 					{
@@ -179,23 +227,22 @@ int main()
 					{
 						sev = "O";
 					}
-					else if (nin == " ")
-					{
-						nin = "O";
-					}
 				}
 				else if (tri == "X")
 				{
-					if (sev == "X")
+					if (sev == " ")
 					{
-						if ((two == " ") && (eit == " "))
-						{
-							eit = "O";
-						}
-						else if ((fur == " ") && (six == " "))
-						{
-							fur = "O";
-						}
+						sev = "O";
+					}
+					else if (sev == "X")
+					{
+						if ((two == " ") && (eit == " ")) eit = "O";
+						else if ((fur == " ") && (six == " ")) fur = "O";
+					}
+					else if (fiv == "X")
+					{
+						if ((fur == " ") && (one == " ")) one = "O";
+						else if ((eit == " ") && (nin == " ")) nin = "O";
 					}
 					else if ((fur == "X") && (one == " "))
 					{
@@ -205,17 +252,22 @@ int main()
 					{
 						nin = "O";
 					}
-					else if (sev == " ")
-					{
-						sev = "O";
-					}
 				}
 				else if (nin == "X")
 				{
-					if (fiv == "X")
+					if (one == " ")
 					{
-						if (tri == " ") tri = "O";
-						else if (sev == " ") sev = "O";
+						one = "O";
+					}
+					else if (one == "X")
+					{
+						if ((fur == " ") && (sev == " ")) sev = "O";
+						else if ((two == " ") && (tri == " ")) tri = "O";
+					}
+					else if (fiv == "X")
+					{
+						if ((two == " ") && (tri == " ")) tri = "O";
+						else if ((fur == " ") && (sev == " ")) sev = "O";
 					}
 					else if ((two == "X") && (tri == " "))
 					{
@@ -228,10 +280,19 @@ int main()
 				}
 				else if (sev == "X")
 				{
-					if (fiv == "X")
+					if (tri == " ")
 					{
-						if (one == " ")	one = "O";
-						else if (nin == " ") nin = "O";
+						tri = "O";
+					}
+					else if (tri == "X")
+					{
+						if ((six == " ") && (nin == " ")) nin = "O";
+						else if ((two == " ") && (one == " ")) one = "O";
+					}
+					else if (fiv == "X")
+					{
+						if ((two == " ") && (one == " ")) one = "O";
+						else if ((six == " ") && (nin == " ")) nin = "O";
 					}
 					else if ((two == "X") && (one == " "))
 					{
@@ -242,14 +303,71 @@ int main()
 						nin = "O";
 					}
 				}
-				else if (one == " ") 	one = "O";
-				else if (nin == " ")	nin = "O";
-				else if (sev == " ")	sev = "O";
-				else if (tri == " ")	tri = "O";
-				else if (two == " ")	two = "O";
-				else if (fur == " ")	fur = "O";
-				else if (six == " ")	six = "O";
-				else if (eit == " ")	eit = "O";
+				else if ((one == " ") 
+					 ||  (tri == " ")
+					 ||  (sev == " ")
+					 ||  (nin == " "))
+				{
+					bool corner = true;
+					while (corner)
+					{
+						int num = rand() % 10;
+						if (num % 2 == 1)
+						{
+							if ((num == 1) && (one == " "))
+							{
+								one = "O";
+								corner = false;
+							}
+							else if ((num == 3) && (tri == " "))
+							{
+								tri = "O";
+								corner = false;
+							}
+							else if ((num == 7) && (sev == " "))
+							{
+								sev = "O";
+								corner = false;
+							}
+							else if ((num == 9) && (nin == " "))
+							{
+								nin = "O";
+								corner = false;
+							}
+						}
+					}
+				}
+				else
+				{
+					bool side = true;
+					while (side)
+					{
+						int num = rand() % 10;
+						if (num % 2 == 0)
+						{
+							if ((num == 2) && (two == " "))
+							{
+								two = "O";
+								side = false;
+							}
+							else if ((num == 4) && (fur == " "))
+							{
+								fur = "O";
+								side = false;
+							}
+							else if ((num == 6) && (six == " "))
+							{
+								six = "O";
+								side = false;
+							}
+							else if ((num == 8) && (eit == " "))
+							{
+								eit = "O";
+								side = false;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
