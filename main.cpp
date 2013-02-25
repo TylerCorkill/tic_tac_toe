@@ -158,6 +158,90 @@ int main()
 			else
 			{
 				if (fiv == " ")			fiv = "O";
+				else if (one == "X")
+				{
+					if (nin == "X")
+					{
+						if ((two == " ") && (eit == " "))
+						{
+							two = "O";
+						}
+						else if ((fur == " ") && (six == " "))
+						{
+							fur = "O";
+						}
+					}
+					else if ((six == "X") && (tri == " "))
+					{
+						tri = "O";
+					}
+					else if ((eit == "X") && (sev == " "))
+					{
+						sev = "O";
+					}
+					else if (nin == " ")
+					{
+						nin = "O";
+					}
+				}
+				else if (tri == "X")
+				{
+					if (sev == "X")
+					{
+						if ((two == " ") && (eit == " "))
+						{
+							eit = "O";
+						}
+						else if ((fur == " ") && (six == " "))
+						{
+							fur = "O";
+						}
+					}
+					else if ((fur == "X") && (one == " "))
+					{
+						one = "O";
+					}
+					else if ((eit == "X") && (nin == " "))
+					{
+						nin = "O";
+					}
+					else if (sev == " ")
+					{
+						sev = "O";
+					}
+				}
+				else if (nin == "X")
+				{
+					if (fiv == "X")
+					{
+						if (tri == " ") tri = "O";
+						else if (sev == " ") sev = "O";
+					}
+					else if ((two == "X") && (tri == " "))
+					{
+						tri = "O";
+					}
+					else if ((fur == "X") && (sev == " "))
+					{
+						sev = "O";
+					}
+				}
+				else if (sev == "X")
+				{
+					if (fiv == "X")
+					{
+						if (one == " ")	one = "O";
+						else if (nin == " ") nin = "O";
+					}
+					else if ((two == "X") && (one == " "))
+					{
+						one = "O";
+					}
+					else if ((six == "X") && (nin == " "))
+					{
+						nin = "O";
+					}
+				}
 				else if (one == " ") 	one = "O";
 				else if (nin == " ")	nin = "O";
 				else if (sev == " ")	sev = "O";
